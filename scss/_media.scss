@@ -44,6 +44,15 @@ $main_color: #0066E9;
     a {
       font-size: 14px;
     }
+
+    .menu-down {
+      width: 930px;
+      top: 51px;
+
+      ul li {
+        width: 33%;
+      }
+    }
   }
 
   .category .container {
@@ -57,6 +66,10 @@ $main_color: #0066E9;
 
   .box-product-custom {
     display: none;
+  }
+
+  .product-page .main-zone {
+    grid-gap: 15px;
   }
 }
 
@@ -122,6 +135,7 @@ $main_color: #0066E9;
         left: 15px;
         z-index: 1010;
         color: white;
+        overflow: scroll;
 
         &.out {
           transform: translate(0, 0);
@@ -155,6 +169,38 @@ $main_color: #0066E9;
           .active {
             border-bottom: 1px solid $main_color;
             background: none;
+            color: $main_color;
+          }
+
+          .menu-down{ 
+            width: 300px;
+            top: 50px;
+            transform: translateX(-300px);
+            padding-top: 0;
+
+            &:hover::before {
+              display: none;
+            }
+  
+            &::before {
+              content: "Trở lại";
+              font-size: 12px;
+              position: absolute;
+              top: -33px;
+              left: 15px;
+            }
+
+            ul li {
+              width: 100%;
+
+              &:first-child {
+                margin-top: 20px;
+              }
+              
+              a {
+                text-transform: initial;
+              }
+            }
           }
         }
       }
@@ -187,6 +233,20 @@ $main_color: #0066E9;
       }
     }
   }
+
+  .product-page {
+    .container {
+      display: block;
+
+      .left {
+        display: none;
+      }
+    }
+
+    .main-zone {
+      grid-gap: 30px;
+    }
+  }
 }
 
 
@@ -209,6 +269,13 @@ $main_color: #0066E9;
     font-size: 16px;
     position: absolute;
   }
+
+  .product-page {
+    .main-zone {
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 15px;
+    }
+  }
 }
 
 @media (max-width: 575px) {
@@ -227,8 +294,39 @@ $main_color: #0066E9;
       height: auto;
     }
   }
+
+  .footer {
+    h4 {
+      border-bottom: 0;
+
+      i {
+        display: block;
+      }
+    }
+
+    ul {
+      transition: .3s;
+      display: none;
+      margin-top: -10px;
+
+      &.active {
+        height: 100%;
+        display: block;
+      }
+    }
+  }
+
+  .search-form {
+    margin: 5px -15px;
+
+    select {
+      width: 120px;
+    }
+  }
 }
 
 @media (max-width: 450px) {
-
+  .product-page .main .product-detail-1-img .xzoom-thumbs img {
+    height: 55px;
+  }
 }

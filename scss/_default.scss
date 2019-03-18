@@ -259,12 +259,11 @@ body {
 
 .pagination {
   margin-bottom: 10px;
-  margin-top: 30px;
 
   .page-item .page-link {
     background: none;
-    border: 1px solid #111111;
-    color: white;
+    border: 1px solid #666;
+    color: #585858;
     border-radius: 3px;
     transition: .3s;
     width: 40px;
@@ -273,7 +272,7 @@ body {
     text-align: center;
     line-height: 25px;
     font-weight: bold;
-    background: #252525;
+    background: none;
 
     &:hover,
     &:focus,
@@ -285,17 +284,16 @@ body {
 }
 
 .bread-crumb {
-  color: white;
+  color: black;
+  margin-top: 15px;
   margin-bottom: 30px;
   text-align: left;
-  background: #252525;
-  padding: 20px 0;
 
   .breadcrumb {
     background: none;
     padding: 0;
     margin-bottom: 0;
-    justify-content: center;
+    justify-content: left;
 
 
     .breadcrumb-item {
@@ -331,7 +329,7 @@ body {
         margin-bottom: -5px;
       }
 
-      h2 {
+      h3 {
         font-weight: bold;
         margin-bottom: 15px;
       }
@@ -929,6 +927,12 @@ body {
     border-bottom: 1px solid #383838;
     text-transform: uppercase;
     font-weight: 600;
+
+    i {
+      float: right;
+      margin-top: -4px;
+      display: none;
+    }
   }
 
   ul {

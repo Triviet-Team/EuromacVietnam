@@ -139,10 +139,15 @@ $('.partner-carousel').owlCarousel({
 });
 
 $(document).ready(() => {
-  const ww = document.body.clientWidth;
-  const url = window.location.href;
+  const windowWidth = document.body.clientWidth;
+  const pageUrl = window.location.href;
 
   
+  if (windowWidth < 1200) {
+    let menuParent = $('.menu-down').parent();
+    menuParent.find('.nav-link').removeAttr('href');
+  }
+
   // GO TOP
   $(window).scroll(function () {
     if ($(this).scrollTop() > 300) {
@@ -196,7 +201,7 @@ $(document).ready(() => {
   });
 
   $(".menu a").each( function () {
-    if (url == (this.href)) {
+    if (pageUrl == (this.href)) {
       $(this).closest("a").addClass("active");
     }
   });
@@ -220,4 +225,8 @@ $(document).ready(() => {
   for (let item = 0; item < 10; item++) {
     $('.slider .owl-dot span').eq(item).text('0' + `${item+1}`)
   }
+
+  $('.footer h4').click(function() {
+    $(this).parent().find('ul').toggleClass('active');
+  });
 });
